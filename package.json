@@ -1,0 +1,65 @@
+{
+  "name": "workbuddy-skin-tools",
+  "version": "1.0.0",
+  "description": "WorkBuddy 皮肤管理器：导入 .wbskin 并应用主题（macOS 桌面应用）",
+  "type": "module",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "bash build/make-electron-app.sh"
+  },
+  "build": {
+    "appId": "com.workbuddy.skinmanager",
+    "productName": "WorkBuddy 皮肤管理器",
+    "directories": {
+      "output": "build-electron"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "lib/**/*",
+      "public/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.utilities",
+      "identity": null
+    },
+    "dmg": {
+      "title": "WorkBuddy 皮肤工坊",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220,
+          "type": "file"
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.0"
+  },
+  "dependencies": {
+    "ws": "^8.21.1"
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkBuddy 皮肤管理器</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="rgba(255,255,255,0.14)"/>
+          <path d="M20 8L31 14.5V25.5L20 32L9 25.5V14.5L20 8Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M20 18L28.5 13.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 18V31" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 18L11.5 13.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-title">WorkBuddy 皮肤管理器</div>
+        <div class="brand-subtitle">导入、预览、切换主题皮肤</div>
+        <div class="brand-author">作者：DreamSoldier</div>
+      </div>
+    </div>
+    <div class="status-pill" id="statusPill">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">WorkBuddy 检测中…</span>
+    </div>
+  </header>
+
+  <main class="manager">
+    <div class="current-skin-bar">
+      <div class="current-skin-left">
+        <span class="current-dot"></span>
+        <span>当前皮肤：<strong id="currentSkinName">默认</strong></span>
+      </div>
+      <div class="current-skin-hint">导入 .wbskin 皮肤包，一键切换 WorkBuddy 主题</div>
+    </div>
+
+    <div class="toolbar">
+      <button id="importBtn" class="btn-primary">
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 3.5V12.5M10 12.5L6.5 9M10 12.5L13.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 13.5V15.5C4 16.0523 4.44772 16.5 5 16.5H15C15.5523 16.5 16 16.0523 16 15.5V13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        导入 .wbskin
+      </button>
+      <button id="restoreBtn" class="btn-secondary">恢复默认皮肤</button>
+    </div>
+
+    <div class="dropzone" id="dropZone">
+      <div class="dropzone-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="currentColor" fill-opacity="0.12"/>
+          <path d="M32 20V38M32 38L24 30M32 38L40 30" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 42V44C20 45.1046 20.8954 46 22 46H42C43.1046 46 44 45.1046 44 44V42" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="dropzone-title">拖拽 .wbskin 皮肤包到此处导入</div>
+      <div class="dropzone-hint">或点击上方按钮选择文件</div>
+    </div>
+
+    <section class="skins-section">
+      <h2 class="section-title">
+        <svg class="section-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="11" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="3" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="11" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        已安装的皮肤
+      </h2>
+      <div class="skin-grid" id="skinGrid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg class="toast-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M6 10L9 13L14.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span id="toastMsg">已恢复 WorkBuddy 默认皮肤</span>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

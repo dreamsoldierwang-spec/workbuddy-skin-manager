@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "2.0",
+  "id": "kung-fu-soccer",
+  "name": "功夫女足",
+  "author": "WorkBuddy Skin Generator",
+  "description": "基于《功夫女足》海报提取的火焰金橙主题，暗底毛玻璃面板，热血高燃。",
+  "theme": "dark",
+  "colors": {
+    "accent": "#FF6A00",
+    "secondary": "#FFB800",
+    "surface": "#1F0A00",
+    "surfaceTransparent": "rgba(45, 14, 0, 0.92)",
+    "text": "#FFF5E0",
+    "textMuted": "#D4A574",
+    "inputBg": "rgba(0,0,0,0.45)"
+  },
+  "layers": {
+    "background": {
+      "type": "image",
+      "image": "images/hero.jpg",
+      "opacity": 1,
+      "blur": 0,
+      "scale": 1,
+      "size": "cover",
+      "position": "center",
+      "repeat": "no-repeat",
+      "overlay": "rgba(0,0,0,0.15)",
+      "dimOverlay": {
+        "enabled": true,
+        "start": "rgba(0,0,0,0.40)",
+        "end": "rgba(0,0,0,0.65)",
+        "radial": "rgba(0,0,0,0.55)"
+      }
+    },
+    "container": {
+      "opacity": 0.42,
+      "blur": 26,
+      "saturation": 1.2,
+      "radius": 18,
+      "border": "1px solid rgba(255,255,255,0.12)",
+      "shadow": "0 8px 32px rgba(0,0,0,0.35)",
+      "sidebar": {
+        "opacity": 0.5,
+        "blur": 22,
+        "radius": 0
+      },
+      "panel": {
+        "opacity": 0.35,
+        "blur": 30,
+        "radius": 20
+      },
+      "input": {
+        "opacity": 0.55,
+        "blur": 22,
+        "radius": 24
+      }
+    },
+    "component": {
+      "text": "#FFF5E0",
+      "textMuted": "#D4A574",
+      "textPlaceholder": "#D4A574",
+      "link": "#FF6A00",
+      "border": "rgba(255,255,255,0.12)",
+      "divider": "rgba(255,255,255,0.08)"
+    },
+    "tokens": {
+      "primary": "#FF6A00",
+      "secondary": "#FFB800",
+      "surface": "#1F0A00",
+      "surfaceSolid": "#1F0A00",
+      "background": "#1F0A00",
+      "foreground": "#FFF5E0"
+    }
+  },
+  "files": {
+    "css": [
+      "theme.css"
+    ],
+    "images": {
+      "hero": "images/hero.jpg"
+    }
+  },
+  "createdAt": "2026-07-31T00:07:50.202Z"
+}

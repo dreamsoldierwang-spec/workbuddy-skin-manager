@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "2.0",
+  "id": "spider-verse",
+  "name": "纵横宇宙",
+  "author": "WorkBuddy Skin Generator",
+  "description": "基于《蜘蛛侠：纵横宇宙》都市日落画面，红黑战衣撞色搭配金色暮光，城市全景壁纸。",
+  "theme": "dark",
+  "colors": {
+    "accent": "#E6242A",
+    "secondary": "#F5A623",
+    "surface": "#0A1126",
+    "surfaceTransparent": "rgba(20, 30, 58, 0.92)",
+    "text": "#F5F7FF",
+    "textMuted": "#A8B4D8",
+    "inputBg": "rgba(0,0,0,0.45)"
+  },
+  "layers": {
+    "background": {
+      "type": "image",
+      "image": "images/hero.jpg",
+      "opacity": 1,
+      "blur": 2,
+      "scale": 1,
+      "size": "cover",
+      "position": "center",
+      "repeat": "no-repeat",
+      "overlay": "rgba(0,0,0,0.15)",
+      "dimOverlay": {
+        "enabled": true,
+        "start": "rgba(8,13,28,0.45)",
+        "end": "rgba(8,13,28,0.70)",
+        "radial": "rgba(8,13,28,0.55)"
+      }
+    },
+    "container": {
+      "opacity": 0.4,
+      "blur": 26,
+      "saturation": 1.2,
+      "radius": 18,
+      "border": "1px solid rgba(255,255,255,0.12)",
+      "shadow": "0 8px 32px rgba(0,0,0,0.35)",
+      "sidebar": {
+        "opacity": 0.48,
+        "blur": 22,
+        "radius": 0
+      },
+      "panel": {
+        "opacity": 0.33,
+        "blur": 30,
+        "radius": 20
+      },
+      "input": {
+        "opacity": 0.53,
+        "blur": 22,
+        "radius": 24
+      }
+    },
+    "component": {
+      "text": "#F5F7FF",
+      "textMuted": "#A8B4D8",
+      "textPlaceholder": "#A8B4D8",
+      "link": "#E6242A",
+      "border": "rgba(255,255,255,0.12)",
+      "divider": "rgba(255,255,255,0.08)"
+    },
+    "tokens": {
+      "primary": "#E6242A",
+      "secondary": "#F5A623",
+      "surface": "#0A1126",
+      "surfaceSolid": "#0A1126",
+      "background": "#0A1126",
+      "foreground": "#F5F7FF"
+    }
+  },
+  "files": {
+    "css": [
+      "theme.css"
+    ],
+    "images": {
+      "hero": "images/hero.jpg"
+    }
+  },
+  "createdAt": "2026-07-31T00:32:27.230Z"
+}

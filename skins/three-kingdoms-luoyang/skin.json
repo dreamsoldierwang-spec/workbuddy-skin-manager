@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "2.0",
+  "id": "three-kingdoms-luoyang",
+  "name": "三国·争洛阳",
+  "author": "WorkBuddy Skin Generator",
+  "description": "基于三国古战场画面：尘土褐金、暗红旌旗、烟霾暖灰。背景图保留更多战场氛围，面板轻薄毛玻璃，兼顾可读与壁纸可见。",
+  "theme": "dark",
+  "colors": {
+    "accent": "#B8574A",
+    "secondary": "#C9A45C",
+    "surface": "#1E1812",
+    "surfaceTransparent": "rgba(35, 28, 20, 0.92)",
+    "text": "#F0E6D8",
+    "textMuted": "#A89B8C",
+    "inputBg": "rgba(0,0,0,0.45)"
+  },
+  "layers": {
+    "background": {
+      "type": "image",
+      "image": "images/hero.jpg",
+      "opacity": 1,
+      "brightness": 1.0,
+      "saturation": 1.2,
+      "blur": 0,
+      "scale": 1,
+      "size": "cover",
+      "position": "center",
+      "repeat": "no-repeat",
+      "overlay": "rgba(0,0,0,0.03)",
+      "dimOverlay": {
+        "enabled": true,
+        "start": "rgba(15,12,8,0.10)",
+        "end": "rgba(15,12,8,0.22)",
+        "radial": "rgba(15,12,8,0.15)"
+      }
+    },
+    "container": {
+      "opacity": 0.24,
+      "blur": 12,
+      "saturation": 1.15,
+      "radius": 18,
+      "border": "1px solid rgba(255,255,255,0.10)",
+      "shadow": "0 8px 32px rgba(0,0,0,0.28)",
+      "sidebar": {
+        "opacity": 0.30,
+        "blur": 10,
+        "radius": 0
+      },
+      "panel": {
+        "opacity": 0.16,
+        "blur": 14,
+        "radius": 20
+      },
+      "input": {
+        "opacity": 0.28,
+        "blur": 10,
+        "radius": 24
+      }
+    },
+    "component": {
+      "text": "#F0E6D8",
+      "textMuted": "#A89B8C",
+      "textPlaceholder": "#A89B8C",
+      "link": "#C9A45C",
+      "border": "rgba(255,255,255,0.10)",
+      "divider": "rgba(255,255,255,0.07)"
+    },
+    "tokens": {
+      "primary": "#B8574A",
+      "secondary": "#C9A45C",
+      "surface": "#1E1812",
+      "surfaceSolid": "#1E1812",
+      "background": "#1E1812",
+      "foreground": "#F0E6D8"
+    }
+  },
+  "files": {
+    "css": [
+      "theme.css"
+    ],
+    "images": {
+      "hero": "images/hero.jpg"
+    }
+  }
+}
