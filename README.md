@@ -25,15 +25,23 @@ npm start
 
 ## 打包（生成 .app / .dmg）
 
+需要 [Node.js](https://nodejs.org) ≥ 20 与 Python ≥ 3.9（dmg 安装盘布局用 Python 的 `dmgbuild` 生成）：
+
 ```bash
+npm install
+pip install dmgbuild          # 生成标准 macOS 拖拽安装盘
 npm run dist
 # 或
 bash build/make-electron-app.sh
 ```
 
-产物位于 `build-electron/`：`WorkBuddy 皮肤管理器.app` 与 `WorkBuddySkinManager.dmg`。
+产物位于 `build-electron/`：
+- `WorkBuddy 皮肤管理器.app` —— 可直接运行的桌面应用
+- `WorkBuddySkinManager.dmg` —— 标准 macOS 拖拽安装盘
 
-> 注：`skins/` 已预置 5 套示例皮肤（赛博霓虹 / 功夫足球 / 蜘蛛侠 / 三国·争洛阳 / 奥德赛·斯巴达），可直接打包使用。示例皮肤的重新生成由 `build-sample-skin.cjs` 调用皮肤生成 Skill 完成。
+> **DMG 内容**：只包含 `WorkBuddy 皮肤管理器.app` 与指向 `/Applications` 的替身，打开后即为「把 App 拖到 Applications」的标准安装界面，不再夹杂 `.wbskin` 皮肤文件。
+>
+> **预装皮肤**：`skins/` 目录下的 5 套示例皮肤（赛博霓虹 / 功夫足球 / 蜘蛛侠 / 三国·争洛阳 / 奥德赛·斯巴达）会预解压进 `.app/Contents/Resources/app/skins/`，用户打开 App 即可直接使用。示例皮肤的重新生成由 `build-sample-skin.cjs` 调用 `workbuddy-skin-generator` Skill 完成。
 
 ## 发布说明（对外分发）
 

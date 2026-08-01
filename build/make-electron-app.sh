@@ -30,6 +30,7 @@ cp "$PROJ/package.json"  "$APP/Contents/Resources/app/package.json"
 
 # skins 目录：从示例 .wbskin 预解压，使 App 开箱即有内置皮肤
 mkdir -p "$APP/Contents/Resources/app/skins"
+SEEN=""
 if [ -d "$PROJ/build-electron" ]; then
   for wb in "$PROJ/build-electron"/*.wbskin; do
     [ -e "$wb" ] || continue
@@ -40,7 +41,10 @@ if [ -d "$PROJ/build-electron" ]; then
       rm -rf "$APP/Contents/Resources/app/skins/$sid"
       mkdir -p "$APP/Contents/Resources/app/skins/$sid"
       cp -R "$tmpd/." "$APP/Contents/Resources/app/skins/$sid/"
-      echo "    预装皮肤：$sid"
+      if [[ "$SEEN" != *"|$sid|"* ]]; then
+        echo "    预装皮肤：$sid"
+        SEEN="${SEEN}|$sid|"
+      fi
     fi
     rm -rf "$tmpd"
   done
@@ -68,17 +72,28 @@ PLIST="$APP/Contents/Info.plist"
 echo "==> ad-hoc 签名（递归）"
 codesign --force --deep --sign - "$APP"
 
-echo "==> 生成 .dmg"
+echo "==> 生成 .dmg（标准拖拽安装盘：仅 App + Applications 替身）"
 DMG="$OUT/WorkBuddySkinManager.dmg"
-TMPDMG=$(mktemp -d)
-cp -R "$APP" "$TMPDMG/"
-ln -s /Applications "$TMPDMG/应用程序"
-# 把示例皮肤包也放进 dmg，方便用户直接体验
-cp "$OUT"/*.wbskin "$TMPDMG/" 2>/dev/null || true
-# 排除 .DS_Store，避免污染 dmg
-find "$TMPDMG" -name '.DS_Store' -delete
-hdiutil create -volname "$APP_NAME" -srcfolder "$TMPDMG" -ov -format UDZO "$DMG" >/dev/null
-rm -rf "$TMPDMG"
+
+# 确保背景图已生成（供 dmgbuild 使用）
+python3 "$PROJ/build/dmg-bg/make-bg.py" 2>/dev/null || true
+
+# 使用 dmgbuild 生成标准安装盘：自动设置 .DS_Store、图标视图、背景图、图标位置
+rm -f "$DMG"
+DMG_APP="$APP" \
+  /Users/dreamsoldier/.workbuddy/binaries/python/envs/default/bin/dmgbuild \
+  -s "$PROJ/build/dmg-settings.py" \
+  "$APP_NAME" \
+  "$DMG" >/dev/null 2>&1 || {
+    echo "    dmgbuild 失败，回退到无布局 DMG"
+    DMG_TMP=$(mktemp -d)
+    STAGE="$DMG_TMP/stage"
+    mkdir -p "$STAGE"
+    cp -R "$APP" "$STAGE/$APP_NAME.app"
+    ln -s /Applications "$STAGE/Applications"
+    hdiutil create -volname "$APP_NAME" -srcfolder "$STAGE" -ov -format UDZO "$DMG" >/dev/null
+    rm -rf "$DMG_TMP"
+}
 
 echo "==> 完成"
 echo ".app: $APP"
