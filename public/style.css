@@ -379,6 +379,57 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== 皮肤工坊引导区 ===== */
+.studio-footer {
+  padding: 22px 28px 30px;
+  background: var(--panel-bg);
+  border-top: 1px solid var(--border);
+}
+
+.studio-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  background: linear-gradient(135deg, var(--brand-light), #FAF4EE);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.studio-footer-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.studio-footer-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.studio-footer-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.studio-footer-link:hover { background: var(--brand-hover); }
+
+.studio-footer-link svg { width: 16px; height: 16px; }
+
 /* ===== 响应式 ===== */
 @media (max-width: 640px) {
   .topbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 18px; }
