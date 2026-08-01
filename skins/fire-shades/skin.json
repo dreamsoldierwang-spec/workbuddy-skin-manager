@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "2.0",
+  "id": "fire-shades",
+  "name": "火遮眼",
+  "author": "DreamSoldier",
+  "description": "以《火遮眼》霓虹夜店为氛围，蓝紫赛博光效与暗调背景碰撞，锐利动感。",
+  "theme": "dark",
+  "colors": {
+    "accent": "#00D4FF",
+    "secondary": "#9D4EDD",
+    "surface": "#0D0818",
+    "text": "#F0E8FF",
+    "textMuted": "#9B8BB5",
+    "inputBg": "rgba(13,8,24,0.35)"
+  },
+  "layers": {
+    "background": {
+      "type": "image",
+      "image": "images/hero.jpg",
+      "opacity": 1,
+      "blur": 0,
+      "scale": 1,
+      "repeat": "no-repeat",
+      "position": "center",
+      "size": "cover",
+      "overlay": "rgba(0,0,0,0.05)",
+      "dimOverlay": {
+        "enabled": true,
+        "start": "rgba(0,0,0,0.20)",
+        "end": "rgba(0,0,0,0.55)",
+        "radial": "rgba(0,0,0,0.25)"
+      }
+    },
+    "container": {
+      "opacity": 0.42,
+      "blur": 30,
+      "saturation": 1.35,
+      "radius": 16,
+      "border": "1px solid rgba(255,255,255,0.10)",
+      "shadow": "0 8px 32px rgba(0,0,0,0.30)",
+      "sidebar": {
+        "opacity": 0.32,
+        "blur": 30,
+        "radius": 0
+      },
+      "panel": {
+        "opacity": 0.2,
+        "blur": 30,
+        "radius": 20
+      },
+      "input": {
+        "opacity": 0.26,
+        "blur": 26,
+        "radius": 24
+      },
+      "header": {
+        "opacity": 0.7,
+        "blur": 22,
+        "radius": 0
+      },
+      "popup": {
+        "opacity": 0.96,
+        "blur": 26,
+        "radius": 16
+      }
+    },
+    "component": {
+      "text": "#F0E8FF",
+      "textMuted": "#9B8BB5",
+      "textPlaceholder": "#6A5A88",
+      "link": "#00D4FF",
+      "border": "rgba(255,255,255,0.08)",
+      "divider": "rgba(255,255,255,0.06)",
+      "shadow": "0 2px 8px rgba(0,0,0,0.25)",
+      "buttonPrimary": {
+        "bg": "rgba(0,212,255,0.16)",
+        "text": "#33DDFF",
+        "hoverBg": "#00D4FF",
+        "hoverText": "#0D0818",
+        "border": "rgba(0,212,255,0.60)"
+      },
+      "buttonSecondary": {
+        "bg": "rgba(13,8,24,0.24)",
+        "text": "#F0E8FF",
+        "hoverBg": "rgba(255,255,255,0.12)",
+        "hoverText": "#F0E8FF",
+        "border": "rgba(255,255,255,0.10)"
+      },
+      "input": {
+        "bg": "rgba(13,8,24,0.35)",
+        "text": "#F0E8FF",
+        "border": "rgba(255,255,255,0.10)",
+        "focusBorder": "#00D4FF",
+        "placeholder": "#6A5A88"
+      },
+      "scrollbar": {
+        "thumb": "#9D4EDD",
+        "track": "transparent",
+        "hover": "#00D4FF"
+      }
+    },
+    "tokens": {
+      "primary": "#00D4FF",
+      "secondary": "#9D4EDD",
+      "success": "#00E5A0",
+      "warning": "#FFB800",
+      "error": "#FF2E7D",
+      "surface": "#0D0818",
+      "surfaceSolid": "#0D0818",
+      "background": "#0D0818",
+      "foreground": "#F0E8FF"
+    }
+  },
+  "files": {
+    "css": [
+      "theme.css"
+    ],
+    "images": {
+      "hero": "images/hero.jpg"
+    }
+  }
+}
