@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "2.0",
+  "id": "minions-medieval",
+  "name": "小黄人·中世纪",
+  "author": "DreamSoldier",
+  "description": "以《小黄人》中世纪盔甲造型为灵感，明黄与银灰盔甲碰撞，俏皮又复古。",
+  "theme": "dark",
+  "colors": {
+    "accent": "#FCE029",
+    "secondary": "#9CA3AF",
+    "surface": "#1C1D21",
+    "text": "#F5F5F5",
+    "textMuted": "#A0A5B0",
+    "inputBg": "rgba(28,29,33,0.35)"
+  },
+  "layers": {
+    "background": {
+      "type": "image",
+      "image": "images/hero.jpg",
+      "opacity": 1,
+      "blur": 0,
+      "scale": 1,
+      "repeat": "no-repeat",
+      "position": "center",
+      "size": "cover",
+      "overlay": "rgba(0,0,0,0.10)",
+      "dimOverlay": {
+        "enabled": true,
+        "start": "rgba(0,0,0,0.25)",
+        "end": "rgba(0,0,0,0.50)",
+        "radial": "rgba(0,0,0,0.20)"
+      }
+    },
+    "container": {
+      "opacity": 0.44,
+      "blur": 28,
+      "saturation": 1.2,
+      "radius": 16,
+      "border": "1px solid rgba(255,255,255,0.10)",
+      "shadow": "0 8px 32px rgba(0,0,0,0.25)",
+      "sidebar": {
+        "opacity": 0.34,
+        "blur": 28,
+        "radius": 0
+      },
+      "panel": {
+        "opacity": 0.22,
+        "blur": 28,
+        "radius": 20
+      },
+      "input": {
+        "opacity": 0.28,
+        "blur": 24,
+        "radius": 24
+      },
+      "header": {
+        "opacity": 0.72,
+        "blur": 20,
+        "radius": 0
+      },
+      "popup": {
+        "opacity": 0.96,
+        "blur": 24,
+        "radius": 16
+      }
+    },
+    "component": {
+      "text": "#F5F5F5",
+      "textMuted": "#A0A5B0",
+      "textPlaceholder": "#6B7280",
+      "link": "#FCE029",
+      "border": "rgba(255,255,255,0.08)",
+      "divider": "rgba(255,255,255,0.06)",
+      "shadow": "0 2px 8px rgba(0,0,0,0.20)",
+      "buttonPrimary": {
+        "bg": "rgba(252,224,41,0.16)",
+        "text": "#FFF066",
+        "hoverBg": "#FCE029",
+        "hoverText": "#1C1D21",
+        "border": "rgba(252,224,41,0.60)"
+      },
+      "buttonSecondary": {
+        "bg": "rgba(28,29,33,0.24)",
+        "text": "#F5F5F5",
+        "hoverBg": "rgba(255,255,255,0.12)",
+        "hoverText": "#F5F5F5",
+        "border": "rgba(255,255,255,0.10)"
+      },
+      "input": {
+        "bg": "rgba(28,29,33,0.35)",
+        "text": "#F5F5F5",
+        "border": "rgba(255,255,255,0.10)",
+        "focusBorder": "#FCE029",
+        "placeholder": "#6B7280"
+      },
+      "scrollbar": {
+        "thumb": "#9CA3AF",
+        "track": "transparent",
+        "hover": "#FCE029"
+      }
+    },
+    "tokens": {
+      "primary": "#FCE029",
+      "secondary": "#9CA3AF",
+      "success": "#4ADE80",
+      "warning": "#FBBF24",
+      "error": "#F87171",
+      "surface": "#1C1D21",
+      "surfaceSolid": "#1C1D21",
+      "background": "#1C1D21",
+      "foreground": "#F5F5F5"
+    }
+  },
+  "files": {
+    "css": [
+      "theme.css"
+    ],
+    "images": {
+      "hero": "images/hero.jpg"
+    }
+  }
+}
